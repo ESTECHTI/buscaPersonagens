@@ -1,216 +1,193 @@
-/* Ajustes gerais */
+/* Estilos gerais */
+body {
+  font-family: Calibri, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
 .container {
-  width: 100%;
   max-width: 1200px;
-  margin: auto;
-  text-align: center;
-  border: 1px solid #ccc;
+  margin: 0 auto;
   padding: 20px;
 }
 
+/* Header */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  flex-wrap: wrap;
+  padding: 10px 0;
 }
 
 header img {
-  max-width: 100%;
-  height: auto;
+  max-width: 150px;
 }
 
 .personagem-usuario {
-  padding-right: 10px;
+  display: flex;
+  align-items: center;
 }
 
+.personagem-nome-candidato,
+.personagem-candidato {
+  margin-right: 10px;
+}
+
+.personagem-usuario--logado {
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Corpo principal */
 .personagem-body {
-  background-color: #ebe5e5;
-  padding: 20px;
+  margin-top: 20px;
 }
 
-/* Título e campo de pesquisa alinhados à esquerda */
 .personagem-padding {
   padding: 20px;
-}
-
-.personagem-busca {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Alinha os elementos à esquerda */
-  width: 100%;
+  background-color: #f8f9fa;
+  border-radius: 5px;
 }
 
 .personagem-title {
-  font-family: calibri;
-  color: black;
-  font-size: 30px;
-  text-align: left; /* Alinha o título à esquerda */
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
 .personagem-subtitle {
-  font-family: calibri;
-  color: black;
-  font-size: 20px;
-  text-align: left; /* Alinha o subtítulo à esquerda */
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 
 .personagem-search-bar {
-  position: relative;
+  margin-bottom: 20px;
   width: 100%;
+  max-width: 100%;
 }
 
 .personagem-input {
-  display: flex;
-  align-items: center;
-  width: 100%;
+  position: relative;
+  width: 20%;
 }
 
-input {
-  padding-right: 30px;
+.personagem-input input {
   width: 100%;
-  max-width: 300px;
-  border: 1px solid #ccc;
+  padding: 10px;
+  padding-right: 30px;
+  border: 1px solid #ced4da;
   border-radius: 5px;
   outline: none;
-  font-style: italic;
 }
 
-/* Listagem dos personagens */
-.personagem-lista {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px; /* Espaçamento entre os itens */
-  align-items: stretch; /* Itens ocupam toda a largura */
+.search-icon {
+  position: absolute;
+  right: 1px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
+/* Lista de personagens */
 .personagem-title--lista {
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-}
-
-.personagem-title--lista label {
-  font-family: calibri;
-  font-size: 14px;
-  color: #b4b1b1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .personagem-item {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
+  margin-bottom: 10px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease;
   padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 100%;
-  flex-direction: row; /* Organiza a imagem e o título na horizontal */
-}
-
-.personagem-item label {
-  font-family: calibri;
-  font-size: 16px;
-  color: #807e7e;
-}
-
-.personagem-item img {
-  width: 80px;
-  height: 80px;
-  margin-right: 20px;
-}
-
-.personagem-item h2 {
-  text-align: left; /* Alinha o título do quadrinho à esquerda */
+  border-radius: 5px;
 }
 
 .personagem-item:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-/* Paginação */
+.personagem-item img {
+  max-width: 50px;
+  border-radius: 5px;
+}
+
+/* Footer e paginação */
+footer {
+  margin-top: 20px;
+}
+
 .pagination {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
-  flex-wrap: wrap;
+  gap: 5px;
 }
 
-button {
-  margin: 5px;
-  padding: 10px;
-  cursor: pointer;
-  border: 1px solid #ccc;
+.pagination button {
+  padding: 5px 10px;
+  border: 1px solid #007bff;
   background-color: white;
-  color: #333;
+  color: #007bff;
+  cursor: pointer;
 }
 
-button.active {
+.pagination button.active,
+.pagination button:hover {
   background-color: #007bff;
   color: white;
-  border-color: #007bff;
 }
 
-button:disabled {
+.pagination button:disabled {
+  opacity: 0.5;
   cursor: not-allowed;
-  background-color: #e9ecef;
-  border-color: #ddd;
 }
 
-/* Responsividade para telas médias */
+/* Responsividade */
 @media (max-width: 768px) {
-  .personagem-padding {
-    padding: 10px;
-  }
-
-  .personagem-lista {
-    flex-direction: column; /* Itens empilhados em colunas */
-  }
-
-  .personagem-item {
-    flex-direction: row; /* Imagem ao lado do título em telas médias */
+  header {
+    flex-direction: column;
     align-items: flex-start;
   }
 
-  input {
-    max-width: 100%;
+  .personagem-usuario {
+    margin-top: 10px;
+  }
+
+  .personagem-title--lista,
+  .personagem-item {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .personagem-title--lista label:last-child,
+  .personagem-item label:last-child {
+    display: none;
   }
 }
 
-/* Responsividade para telas pequenas */
 @media (max-width: 480px) {
+  .personagem-title--lista,
   .personagem-item {
-    flex-direction: column; /* Em telas pequenas, a imagem fica acima do título */
-    align-items: center;
+    grid-template-columns: 1fr;
   }
 
-  .personagem-item img {
-    margin-right: 0;
-    margin-bottom: 10px; /* Espaço entre a imagem e o título */
-  }
-
-  input {
-    max-width: 100%;
-    margin-bottom: 10px;
-  }
-
-  header {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .pagination {
-    flex-direction: column; /* Paginação empilhada em telas menores */
-  }
-
-  button {
-    width: 100%;
+  .personagem-title--lista label,
+  .personagem-item label {
     margin-bottom: 5px;
   }
-}
 
+  .pagination button:not(:first-child):not(:last-child) {
+    display: none;
+  }
+}
 
 /* CSS para um spinner mais estilizado */
 .spinner {
