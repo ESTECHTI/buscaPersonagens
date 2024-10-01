@@ -1,0 +1,169 @@
+.container {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+.personagem-usuario {
+  padding-right: 10px;
+}
+
+.personagem-usuario--logado {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: #e7e7e7;
+  border-radius: 5px;
+  width: 10px;
+  height: 10px;
+  font-weight: bold;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px 10px 20px;
+}
+
+header .personagem-nome-candidato {
+  font-family: calibri;
+  color: black;
+  font-size: 15px;
+  font-weight: bold;
+  padding-right: 10px;
+}
+
+header .personagem-candidato {
+  font-family: calibri;
+  color: black;
+  font-size: 15px;
+  padding-right: 10px;
+}
+
+.personagem-body {
+  background-color: #ebe5e5;
+}
+
+.personagem-padding {
+  padding: 20px 130px;
+}
+
+.personagem-busca {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.personagem-title {
+  font-family: calibri;
+  color: black;
+  font-size: 30px;
+}
+
+.personagem-subtitle {
+  font-family: calibri;
+  color: black;
+  font-size: 20px;
+}
+
+.personagem-search-bar {
+  position: relative;
+}
+
+.personagem-input {
+  display: flex;
+  align-items: center;
+}
+
+input {
+  padding-right: 30px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  font-style: italic;
+}
+
+.search-icon {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+}
+
+.personagem-busca input {
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.personagem-lista {
+  margin-top: 20px;
+}
+
+.personagem-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.personagem-item:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.personagem-item img {
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
+}
+
+.pagination {
+  list-style: none;
+  padding: 0;
+}
+
+.pagination li {
+  display: inline;
+  margin: 0 5px;
+}
+
+.pagination a {
+  padding: 10px 15px;
+  text-decoration: none;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background-color: white;
+  color: #333;
+}
+
+button.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  background-color: #e9ecef;
+  border-color: #ddd;
+}

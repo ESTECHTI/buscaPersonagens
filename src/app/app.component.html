@@ -1,0 +1,57 @@
+<div class="container">
+  <header>
+    <img src="../assets/Objective.png" alt="Objective">
+    <div class="personagem-usuario">
+      <span class="personagem-nome-candidato">Nome do candidato</span>
+      <span class="personagem-candidato">Teste de Front</span>
+      <div class="personagem-usuario--logado">
+        <span class="personagem-nome-candidato">CB</span>
+      </div>
+    </div>
+
+  </header>
+
+  <div class="personagem-body">
+    <div class="personagem-padding">
+      <div class="personagem-busca">
+        <h1 class="personagem-title">Busca de personagens</h1>
+        <h2 class="personagem-subtitle">Nome do personagem</h2>
+        <div class="personagem-search-bar">
+          <div class="personagem-input">
+            <input type="text" placeholder="Search" [(ngModel)]="searchQuery" (input)="searchCharacters()">
+            <span class="search-icon"><i class="fas fa-search"></i></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="personagem-lista">
+        <div class="personagem-item" *ngFor="let comic of paginatedComics">
+          <img [src]="comic.thumbnail.path + '.' + comic.thumbnail.extension" alt="{{ comic.title }}">
+            <h2>{{ comic.title }}</h2>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <!-- Navegação com botões de páginas -->
+        <div class="pagination">
+          <!-- Botão de duas setas para voltar rápido -->
+          <button (click)="fastBackward()" [disabled]="currentPage === 1">««</button>
+
+          <!-- Botão de uma seta para voltar -->
+          <button (click)="previousPage()" [disabled]="currentPage === 1">«</button>
+
+          <!-- Botões numerados para cada página -->
+          <button *ngFor="let page of [1, 2, 3, 4]" (click)="goToPage(page)" [class.active]="currentPage === page">
+            {{ page }}
+          </button>
+
+          <!-- Botão de uma seta para avançar -->
+          <button (click)="nextPage()" [disabled]="currentPage === totalPages">»</button>
+
+          <!-- Botão de duas setas para avançar rápido -->
+          <button (click)="fastForward()" [disabled]="currentPage === totalPages">»»</button>
+        </div>
+      </footer>
+    </div>
+  </div>
