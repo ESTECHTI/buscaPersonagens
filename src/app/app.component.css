@@ -1,60 +1,44 @@
+/* Ajustes gerais */
 .container {
-  width: 80%;
+  width: 100%;
+  max-width: 1200px;
   margin: auto;
   text-align: center;
   border: 1px solid #ccc;
-}
-
-.personagem-usuario {
-  padding-right: 10px;
-}
-
-.personagem-usuario--logado {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  background-color: #e7e7e7;
-  border-radius: 5px;
-  width: 10px;
-  height: 10px;
-  font-weight: bold;
+  padding: 20px;
 }
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px 10px 20px;
+  padding: 10px 20px;
+  flex-wrap: wrap;
 }
 
-header .personagem-nome-candidato {
-  font-family: calibri;
-  color: black;
-  font-size: 15px;
-  font-weight: bold;
-  padding-right: 10px;
+header img {
+  max-width: 100%;
+  height: auto;
 }
 
-header .personagem-candidato {
-  font-family: calibri;
-  color: black;
-  font-size: 15px;
+.personagem-usuario {
   padding-right: 10px;
 }
 
 .personagem-body {
   background-color: #ebe5e5;
+  padding: 20px;
 }
 
+/* Título e campo de pesquisa alinhados à esquerda */
 .personagem-padding {
-  padding: 20px 130px;
+  padding: 20px;
 }
 
 .personagem-busca {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-start; /* Alinha os elementos à esquerda */
   width: 100%;
 }
 
@@ -62,46 +46,56 @@ header .personagem-candidato {
   font-family: calibri;
   color: black;
   font-size: 30px;
+  text-align: left; /* Alinha o título à esquerda */
 }
 
 .personagem-subtitle {
   font-family: calibri;
   color: black;
   font-size: 20px;
+  text-align: left; /* Alinha o subtítulo à esquerda */
 }
 
 .personagem-search-bar {
   position: relative;
+  width: 100%;
 }
 
 .personagem-input {
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 input {
   padding-right: 30px;
   width: 100%;
+  max-width: 300px;
   border: 1px solid #ccc;
   border-radius: 5px;
   outline: none;
   font-style: italic;
 }
 
-.search-icon {
-  position: absolute;
-  right: 10px;
-  cursor: pointer;
-}
-
-.personagem-busca input {
-  width: 300px;
-  padding: 10px;
-  font-size: 16px;
-}
-
+/* Listagem dos personagens */
 .personagem-lista {
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Espaçamento entre os itens */
+  align-items: stretch; /* Itens ocupam toda a largura */
+}
+
+.personagem-title--lista {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.personagem-title--lista label {
+  font-family: calibri;
+  font-size: 14px;
+  color: #b4b1b1;
 }
 
 .personagem-item {
@@ -112,10 +106,14 @@ input {
   border: 1px solid #ccc;
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  flex-direction: row; /* Organiza a imagem e o título na horizontal */
 }
 
-.personagem-item:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+.personagem-item label {
+  font-family: calibri;
+  font-size: 16px;
+  color: #807e7e;
 }
 
 .personagem-item img {
@@ -124,32 +122,25 @@ input {
   margin-right: 20px;
 }
 
-.pagination {
-  list-style: none;
-  padding: 0;
+.personagem-item h2 {
+  text-align: left; /* Alinha o título do quadrinho à esquerda */
 }
 
-.pagination li {
-  display: inline;
-  margin: 0 5px;
+.personagem-item:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
-.pagination a {
-  padding: 10px 15px;
-  text-decoration: none;
-  background-color: #f0f0f0;
-  border-radius: 4px;
-}
-
+/* Paginação */
 .pagination {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  flex-wrap: wrap;
 }
 
 button {
-  margin: 0 5px;
-  padding: 5px 10px;
+  margin: 5px;
+  padding: 10px;
   cursor: pointer;
   border: 1px solid #ccc;
   background-color: white;
@@ -166,4 +157,106 @@ button:disabled {
   cursor: not-allowed;
   background-color: #e9ecef;
   border-color: #ddd;
+}
+
+/* Responsividade para telas médias */
+@media (max-width: 768px) {
+  .personagem-padding {
+    padding: 10px;
+  }
+
+  .personagem-lista {
+    flex-direction: column; /* Itens empilhados em colunas */
+  }
+
+  .personagem-item {
+    flex-direction: row; /* Imagem ao lado do título em telas médias */
+    align-items: flex-start;
+  }
+
+  input {
+    max-width: 100%;
+  }
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 480px) {
+  .personagem-item {
+    flex-direction: column; /* Em telas pequenas, a imagem fica acima do título */
+    align-items: center;
+  }
+
+  .personagem-item img {
+    margin-right: 0;
+    margin-bottom: 10px; /* Espaço entre a imagem e o título */
+  }
+
+  input {
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .pagination {
+    flex-direction: column; /* Paginação empilhada em telas menores */
+  }
+
+  button {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+}
+
+
+/* CSS para um spinner mais estilizado */
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+}
+
+.loader {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border: 8px solid #f3f3f3; /* Cor do fundo */
+  border-top: 8px solid #3498db; /* Cor da animação */
+  border-radius: 50%;
+  animation: spin 1.5s linear infinite;
+}
+
+.loader:before,
+.loader:after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  border: 8px solid transparent;
+}
+
+.loader:before {
+  border-top: 8px solid #e74c3c; /* Cor do segundo anel */
+  width: 60px;
+  height: 60px;
+  top: 10px;
+  left: 10px;
+  animation: spin 1.2s linear infinite reverse; /* Animação no sentido inverso */
+}
+
+.loader:after {
+  border-top: 8px solid #9b59b6; /* Cor do terceiro anel */
+  width: 40px;
+  height: 40px;
+  top: 20px;
+  left: 20px;
+  animation: spin 1.5s linear infinite; /* Animação no mesmo sentido do loader principal */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
