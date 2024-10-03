@@ -3,9 +3,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { MarvelService } from './marvel.service';
+import { AppRoutingModule } from '../routes/app-routing.module';
+import { AppComponent } from '../app/marvel.component';
+import { MarvelService } from '../service/marvel.service';
 import { FilterPipe } from '../pipes/filter.pipe';
 
 @NgModule({
@@ -22,4 +22,4 @@ import { FilterPipe } from '../pipes/filter.pipe';
   providers: [MarvelService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class MarvelModule { }

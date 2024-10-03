@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { MarvelService } from './marvel.service';
+import { MarvelService } from '../service/marvel.service';
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './marvel.component.html',
+  styleUrls: ['./marvel.component.css']
 })
 export class AppComponent implements OnInit {
 
@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
       (response: any) => {
         this.comics = response.data.results;
         this.filteredComics = [...this.comics]; // Exibe todos os quadrinhos inicialmente
-        console.log('comics ' + JSON.stringify(this.filteredComics, null, 2));
+        console.log("retorno " + JSON.stringify(this.filteredComics) )
         this.updatePaginatedComics(); // Atualiza a exibição dos quadrinhos da página atual
         this.isLoading = false;                 // Oculta o loader após carregar os dados
       },
