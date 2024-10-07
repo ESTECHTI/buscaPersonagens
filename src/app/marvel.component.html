@@ -2,8 +2,10 @@
   <header>
     <img src="../assets/Objective.png" alt="Objective">
     <div class="personagem-usuario">
-      <span class="personagem-nome-candidato">Nome do candidato</span>
-      <span class="personagem-candidato">Teste de Front</span>
+      <div class="personagem-nome">
+        <span class="personagem-nome-candidato">Nome do candidato</span>
+        <span class="personagem-candidato">Teste de Front</span>
+      </div>
       <div class="personagem-usuario--logado">
         <span class="personagem-nome-usuario">CB</span>
       </div>
@@ -33,13 +35,15 @@
         <div class="personagem-title--lista">
           <label for="personagem">Personagem</label>
           <label for="series">Séries</label>
-          <label for="personagem">Eventos</label>
+          <label for="eventos">Eventos</label>
         </div>
         <div class="personagem-item" *ngFor="let comic of paginatedComics">
-          <img [src]="comic.thumbnail.path + '.' + comic.thumbnail.extension" alt="{{ comic.title }}">
-          <label for="title">{{ comic.title }}</label>
+          <div class="personagem-img--title">
+            <img [src]="comic.thumbnail.path + '.' + comic.thumbnail.extension" alt="{{ comic.title }}">
+            <label for="title">{{ comic.title }}</label>
+          </div>
           <label for="name">{{ comic.series.name }}</label>
-          <label for="variants">{{ comic.variants.name }}</label>
+          <label for="variants">Marvel eventos...</label>
           </div>
         </div>
       </div>

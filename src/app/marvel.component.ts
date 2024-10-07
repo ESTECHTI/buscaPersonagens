@@ -29,7 +29,6 @@ export class AppComponent implements OnInit {
       (response: any) => {
         this.comics = response.data.results;
         this.filteredComics = [...this.comics]; // Exibe todos os quadrinhos inicialmente
-        console.log("retorno " + JSON.stringify(this.filteredComics) )
         this.updatePaginatedComics(); // Atualiza a exibição dos quadrinhos da página atual
         this.isLoading = false;                 // Oculta o loader após carregar os dados
       },

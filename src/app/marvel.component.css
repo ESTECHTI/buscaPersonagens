@@ -28,6 +28,10 @@ header img {
   align-items: center;
 }
 
+.personagem-nome-candidato {
+  font-weight: bold;
+}
+
 .personagem-nome-candidato,
 .personagem-candidato {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -59,7 +63,7 @@ header img {
 
 .personagem-padding {
   padding: 20px;
-  background-color: #f8f9fa;
+  background-color: #eef0f7;
   border-radius: 5px;
 }
 
@@ -95,11 +99,15 @@ header img {
   outline: none;
 }
 
+.personagem-input input::placeholder {
+  font-style: italic;
+}
+
 .search-icon {
   position: absolute;
   right: 1px;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%) translateX(22px);
 }
 
 /* Lista de personagens */
@@ -134,6 +142,15 @@ header img {
   border-radius: 5px;
 }
 
+.personagem-img--title {
+  display: flex;
+  align-items: center;
+}
+
+.personagem-img--title label {
+  padding: 0px 10px;
+}
+
 /* Footer e paginação */
 footer {
   margin-top: 20px;
@@ -166,38 +183,144 @@ footer {
 
 /* Responsividade */
 @media (max-width: 768px) {
+  .container {
+    padding: 0;
+  }
+
   header {
-    flex-direction: column;
-    align-items: flex-start;
+    padding: 10px;
+  }
+
+  header img {
+    max-width: 100px;
   }
 
   .personagem-usuario {
-    margin-top: 10px;
+    display: flex;
   }
 
-  .personagem-title--lista,
-  .personagem-item {
-    grid-template-columns: 1fr 1fr;
+  .personagem-nome {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 20px;
   }
 
-  .personagem-title--lista label:last-child,
-  .personagem-item label:last-child {
+  .personagem-nome-candidato {
+    font-weight: bold;
+  }
+
+  .personagem-nome-candidato, .personagem-candidato {
+    font-size: 12px;
+    margin-right: 0;
+  }
+
+  .personagem-usuario--logado {
+    margin-top: 5px;
+  }
+
+  .personagem-body {
+    margin-top: 0;
+  }
+
+  .personagem-padding {
+    padding: 10px;
+    background-color: #eef0f7;
+  }
+
+  .personagem-title {
+    text-align: center;
+    font-size: 22px;
+  }
+
+  .personagem-subtitle {
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .personagem-search-bar {
+    margin-bottom: 15px;
+  }
+
+  .search-icon {
+    position: absolute;
+    right: 1px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .personagem-input input{
+    width: calc(100% - 40px);
+    margin: 0 10px;
+  }
+
+  .personagem-input input::placeholder {
+    font-style: italic;
+}
+
+  .personagem-title--lista {
+    display: block;
+    margin-bottom: 5px;
+    padding-left: 10px;
+  }
+
+
+  .personagem-title--lista label {
     display: none;
+  }
+
+  .personagem-title--lista label:first-child {
+    display: block;
+    color: #b7bcc2;
+    font-size: 12px;
+    margin: 0px 0px 5px 50px;
+  }
+
+  .personagem-item {
+    display: flex;
+    padding: 10px;
+    box-shadow: none;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .personagem-item:last-child {
+    border-bottom: none;
+  }
+
+  .personagem-item img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .personagem-item > *:not(.personagem-img--title) {
+    display: none;
+  }
+
+  .personagem-img--title {
+    display: flex;
+    align-items: center;
+  }
+
+  .personagem-img--title label {
+    padding: 0 10px;
+  }
+
+  .pagination {
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+
+  .pagination button {
+    font-size: 14px;
   }
 }
 
 @media (max-width: 480px) {
-  .personagem-title--lista,
-  .personagem-item {
-    grid-template-columns: 1fr;
+  .personagem-input {
+    width: calc(100% - 20px);
   }
 
-  .personagem-title--lista label,
-  .personagem-item label {
-    margin-bottom: 5px;
-  }
-
-  .pagination button:not(:first-child):not(:last-child) {
+  .personagem-title--series .personagem-title--eventos {
     display: none;
   }
 }
